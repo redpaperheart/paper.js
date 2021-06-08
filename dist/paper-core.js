@@ -9,7 +9,7 @@
  *
  * All rights reserved.
  *
- * Date: Tue Mar 23 16:54:21 2021 +0100
+ * Date: Tue Jun 8 09:03:05 2021 -0400
  *
  ***
  *
@@ -13416,7 +13416,6 @@ new function() {
 				view = this;
 
 			function responds(type) {
-				console.log('responds', type)
 				return itemEvents.virtual[type] || view.responds(type)
 						|| tool && tool.responds(type);
 			}
@@ -13470,8 +13469,6 @@ new function() {
 							item = item._parent;
 						if (item)
 							dragItem = hitItem;
-					}else{
-						console.log('prevented', prevented)
 					}
 					downPoint = point;
 				} else if (mouse.up) {
@@ -13494,9 +13491,10 @@ new function() {
 
 			if (
 				event.cancelable !== false
+				&& false
 				&& (called && !mouse.move || mouse.down && responds('mouseup'))
 			) {
-				console.log('preventDefault disabled!!! called', called)
+				event.preventDefault();
 			}
 		},
 
