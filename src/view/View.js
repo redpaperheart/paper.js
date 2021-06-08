@@ -1385,6 +1385,7 @@ new function() { // Injection scope for event handling on the browser
             // We emit mousedown only when in the view, and mouseup regardless,
             // as long as the mousedown event was inside.
             if (mouse.down && inView || mouse.up && downPoint) {
+                // console.log('emitMouseEvents')
                 emitMouseEvents(this, hitItem, type, event, point, downPoint);
                 if (mouse.down) {
                     // See if we're clicking again on the same item, within the
@@ -1427,6 +1428,7 @@ new function() { // Injection scope for event handling on the browser
             // Prevent default if at least one handler was called, and none of
             // them enforces default, to prevent scrolling on touch devices.
             if (handle && tool) {
+                // console.log('handle event here')
                 called = tool._handleMouseEvent(type, event, point, mouse)
                     || called;
             }
@@ -1442,8 +1444,10 @@ new function() { // Injection scope for event handling on the browser
             // would result in no effect and an error.
             if (
                 event.cancelable !== false
+                && false // disable this
                 && (called && !mouse.move || mouse.down && responds('mouseup'))
             ) {
+                // this is disabled
                 event.preventDefault();
             }
         },
