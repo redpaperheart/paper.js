@@ -1444,11 +1444,12 @@ new function() { // Injection scope for event handling on the browser
             // would result in no effect and an error.
             if (
                 event.cancelable !== false
-                && false // disable this
+                && true // disable this
                 && (called && !mouse.move || mouse.down && responds('mouseup'))
             ) {
+                console.log('rph-paper');
                 // this is disabled
-                event.preventDefault();
+                // event.preventDefault();
             }
         },
 

@@ -9,7 +9,7 @@
  *
  * All rights reserved.
  *
- * Date: Tue Jun 8 09:03:05 2021 -0400
+ * Date: Tue Jun 8 09:28:58 2021 -0400
  *
  ***
  *
@@ -13494,10 +13494,10 @@ new function() {
 
 			if (
 				event.cancelable !== false
-				&& false
+				&& true
 				&& (called && !mouse.move || mouse.down && responds('mouseup'))
 			) {
-				event.preventDefault();
+				console.log('rph-paper')
 			}
 		},
 
